@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lightseagreen;
+            height: 70px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            padding: 0 15px;
+        }
+
+        li:hover {
+            background-color: antiquewhite;
+        }
+
+        a {
+            text-decoration: none;
+            color: rebeccapurple;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        main {
+            height: 2000px;
+            background-color: beige;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+        
+        footer {
+            background-color: grey;
+            color: rgb(0, 204, 255);
+            height: 100px;
+        }
+        
+        .navigation{
+            text-align: center;
+            margin: 0px;
+            background-color: lightseagreen;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"> LoGo </a>
+        </div>
+        <div>
+            <div class="navBar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Project.html">Project</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Github.html">Github</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="icons">
+            <ul>
+                <li><a href="#">아이콘</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main> The Little Prince 원서읽기
+        <section>
+            <div id="page1" class="active">
+                <img src="../images/The Little Prince images context.jpg">
+                <h3>1장</h3>
+                <p>Chapter 1
+                    Once when I was six years old I saw a magnificent picture in a book, called True Stories from
+                    Nature, about the primeval forest. Voice Reading
+                    It was a picture of a boa constrictor in the act of swallowing an animal. Voice Reading
+                    Here is a copy of the drawing.<br>
+                    <img src="../images/boaeatmouse.jpg"><br>
+
+                    In the book it said: "Boa constrictors swallow their prey whole, without chewing it. Voice
+                    Reading
+                    After that they are not able to move, and they sleep through the six months that they need for
+                    digestion." Voice Reading
+                    I pondered deeply, then, over the adventures of the jungle. Voice Reading
+                    And after some work with a colored pencil I succeeded in making my first drawing. Voice Reading
+                    My Drawing Number One. It looked something like this:<br>
+                    <img src="../images/boaeatelipent.jpg"><br>
+
+                    I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them.
+                    Voice Reading
+                    But they answered: "Frighten? Why should any one be frightened by a hat?" Voice Reading
+                    My drawing was not a picture of a hat. Voice Reading
+                    It was a picture of a boa constrictor digesting an elephant. Voice Reading
+                    But since the grown-ups were not able to understand it, I made another drawing: I drew the
+                    inside of a boa constrictor, so that the grown-ups could see it clearly. Voice Reading
+                    They always need to have things explained. Voice Reading
+                    My Drawing Number Two looked like this:<br>
+                    <img src="../images/boainelipent.jpg"><br>
+
+                    The grown-ups' response, this time, was to advise me to lay aside my drawings of boa
+                    constrictors, whether from the inside or the outside, and devote myself instead to geography,
+                    history, arithmetic, and grammar. Voice Reading
+                    That is why, at the age of six, I gave up what might have been a magnificent career as a
+                    painter. Voice Reading
+                    I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Voice
+                    Reading
+                    Grown-ups never understand anything by themselves, and it is tiresome for children to be always
+                    and forever explaining things to them. Voice Reading
+                    So then I chose another profession, and learned to pilot airplanes. Voice Reading
+                    I have flown a little over all parts of the world; and it is true that geography has been very
+                    useful to me.
+                </p>
+            </div>
+
+            <div id="page2" class="page">
+                <h3>2장</h3>
+                <p>
+
+                </p>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="navigation">
+            <button onclick="previousPage()">&larr;</button>
+            <!-- <div class="box1">start</div>
+            <div class="box2">end</div> -->
+            <button onclick="nextPage()">&rarr;</button>
+        </div>
+    </footer>
+    <script>
+        let currentPage = 1;
+        const totalPages = 100;
+        document.addEventListener('whell', function (event) {
+        })
+
+        function showPage(pageNumber) {
+            for(let i = 1 ; i <= totalPages; i++) {
+                const page = document.getElementById(`page${i}`);
+                if(i === pageNumber) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalpages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function previousPage() {
+            if(currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+    </script>
+</body>
+</html>
